@@ -150,7 +150,7 @@ def build_v1():
     final.paste(cover, (0, 0))
     final.paste(card, (0, cover.height))
     final.save("postcard_final_1_with_cover.png", "PNG")
-    print(f"已保存：postcard_final_1_with_cover.png（已拼接封面）")
+    print("已保存：postcard_final_1_with_cover.png（已拼接封面）")
 
 
 # ── 版本2：独角兽版 ───────────────────────────────────────────────────────────
@@ -206,7 +206,7 @@ def build_v2():
     final.paste(cover, (0, 0))
     final.paste(card, (0, cover.height))
     final.save("postcard_final_2_with_cover.png", "PNG")
-    print(f"已保存：postcard_final_2_with_cover.png（已拼接封面）")
+    print("已保存：postcard_final_2_with_cover.png（已拼接封面）")
 
 
 # ── 入口 ──────────────────────────────────────────────────────────────────────
