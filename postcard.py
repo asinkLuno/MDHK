@@ -143,6 +143,15 @@ def build_v1():
     card.save("postcard_final_1.png", "PNG")
     print(f"已保存：postcard_final_1.png  ({W}×{H})")
 
+    # 拼接封面（调整封面宽度与明信片一致）
+    cover = Image.open("cover_1.jpg").convert("RGB")
+    cover = cover.resize((W, int(cover.height * W / cover.width)), Image.LANCZOS)
+    final = Image.new("RGB", (W, H + cover.height), "white")
+    final.paste(cover, (0, 0))
+    final.paste(card, (0, cover.height))
+    final.save("postcard_final_1_with_cover.png", "PNG")
+    print(f"已保存：postcard_final_1_with_cover.png（已拼接封面）")
+
 
 # ── 版本2：独角兽版 ───────────────────────────────────────────────────────────
 
@@ -189,6 +198,15 @@ def build_v2():
 
     card.convert("RGB").save("postcard_final_2.png", "PNG")
     print(f"已保存：postcard_final_2.png  ({W}×{H})")
+
+    # 拼接封面（调整封面宽度与明信片一致）
+    cover = Image.open("cover_2.jpg").convert("RGB")
+    cover = cover.resize((W, int(cover.height * W / cover.width)), Image.LANCZOS)
+    final = Image.new("RGB", (W, H + cover.height), "white")
+    final.paste(cover, (0, 0))
+    final.paste(card, (0, cover.height))
+    final.save("postcard_final_2_with_cover.png", "PNG")
+    print(f"已保存：postcard_final_2_with_cover.png（已拼接封面）")
 
 
 # ── 入口 ──────────────────────────────────────────────────────────────────────
