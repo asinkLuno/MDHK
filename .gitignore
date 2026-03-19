@@ -2,8 +2,3 @@
 __pycache__/
 *.pyc
 
-# 生成的输出图片
-postcard_final_1.png
-postcard_final_2.png
-combined.png
-combined2.png
